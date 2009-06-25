@@ -5,7 +5,7 @@
 <wiki:toc max_depth="2" />
 
 
-= ReVirt 介绍 =
+= Revirt 介绍 =
 
   Revirt 是由美国密歇根大学的Peter Chen教授带领的团队发起的项目。它是基于虚拟机技术实现的重放系统。
 
@@ -41,7 +41,7 @@
 
 = 相关论文 =
 
- * ReVirt: Enabling Intrusion Analysis through Virtual-Machine Logging and Replay, Proceedings of the 2002 Symposium on Operating Systems Design and Implementation
+ * Revirt: Enabling Intrusion Analysis through Virtual-Machine Logging and Replay, Proceedings of the 2002 Symposium on Operating Systems Design and Implementation
 
  * Execution Replay for Multiprocessor Virtual Machines, 2008 ACM
 
