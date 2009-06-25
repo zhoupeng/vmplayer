@@ -53,4 +53,4 @@
 
 = 相关链接 =
 
- * ReVirt 主页 http://www.eecs.umich.edu/virtual/
+ * Revirt 主页 http://www.eecs.umich.edu/virtual/
