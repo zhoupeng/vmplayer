@@ -1,4 +1,4 @@
-#summary IntroducetoRecordArchitecture.
+#summary RecordArchitecture
 
 <wiki:toc max_depth="2" />
 
