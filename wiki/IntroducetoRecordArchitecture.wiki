@@ -4,7 +4,7 @@
 
 = Introduction =
 
-Record部分负责获取事件并生成日志文件，为以后的Replay准备数据。
+Record部分负责获取事件并生成日志文件，为Replay阶段准备数据。
 
 
 = Details =
