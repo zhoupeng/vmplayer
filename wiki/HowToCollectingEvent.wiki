@@ -11,17 +11,18 @@
 
  == 基本思路 ==
 
-   1) 把RDTSC设置成特权指令，这样RDTSC只能在ring0执行
 
-   2) 当RDTSC在guest os执行时就会触发通用保护异常(GPF)
+   1. 把RDTSC设置成特权指令，这样RDTSC只能在ring0执行
 
-   3) 异常被xen hypervisor 捕获
+   2. 当RDTSC在guest os执行时就会触发通用保护异常(GPF)
 
-   4) GPF 异常处理函数被调用(Xen中就是do_general_protection)
+   3. 异常被xen hypervisor 捕获
 
-   5) 在Xen hypervisor中对RDTSC进行模拟执行，将执行结果返回给guest os
+   4. GPF 异常处理函数被调用(Xen中就是do_general_protection)
 
-   6) guest os 继续执行RDTSC指令的下一条指令
+   5. 在Xen hypervisor中对RDTSC进行模拟执行，将执行结果返回给guest os
+
+   6. guest os 继续执行RDTSC指令的下一条指令
 
    以上整个过程对于guest os透明。
 
