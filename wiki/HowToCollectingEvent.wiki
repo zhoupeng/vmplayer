@@ -25,11 +25,12 @@
 为解决上面问题我采取的方法是只有被监控的guest os要被调入时才设置RDTSC为特权指令，当被监控的guest os被调出时取消设置，对于Dom0和idle domain从不设置。 
 
   == 详细分析 ==
-* 设置RDTSC特权指令
+
+ *  设置RDTSC特权指令
 
   在context_switch函数中通过指令set_in_cr4(X86_CR4_TSD)把RDTSC设为特权指令，具体请看提交的patch代码结合上面的基本思路描述可能会更明白。
 
-* 捕获RDTSC的代码流程(请看xen3.3.0被patch后的代码)
+ * 捕获RDTSC的代码流程(请看xen3.3.0被patch后的代码)
 
    被监控guest os中执行RDTSC
 -->  触发GPF异常
