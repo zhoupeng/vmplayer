@@ -48,13 +48,9 @@
   -->  触发GPF异常
 
   --> do_general_protection  // arch/x86/traps.c
-
       --> emulate_privileged_op // arch/x86/traps.c，在这里调用钩子函数do_tsc_fixup
-
         --> do_tsc_fixup(v, regs) // arch/x86/x86_32/seg_fixup.c
-
            --> report_monitored_rdtsc  //它接下调用子函数收集RDTSC执行结果，准备一条记录；这些子函数是Record框架通用代码不再赘述。
-
            --> report_monitored_rdtsc_finish // 它接下来调用子函数把数据写入replay queue，并发送virq事件；这些子函数是Record框架通用代码不再赘述。
 
 以上粗线条的分析了下流程，详细情况可以照着这个线索看详细代码。
