@@ -9,17 +9,17 @@
 = Details =
 
  == 基本思路 ==
-* 1) 把RDTSC设置成特权指令，这样RDTSC只能在ring0执行
+ 1) 把RDTSC设置成特权指令，这样RDTSC只能在ring0执行
 
-* 2) 当RDTSC在guest os执行时就会触发通用保护异常(GPF)
+ 2) 当RDTSC在guest os执行时就会触发通用保护异常(GPF)
 
-* 3) 异常被xen hypervisor 捕获
+ 3) 异常被xen hypervisor 捕获
 
-* 4) GPF 异常处理函数被调用(Xen中就是do_general_protection)
+ 4) GPF 异常处理函数被调用(Xen中就是do_general_protection)
 
-* 5) 在Xen hypervisor中对RDTSC进行模拟执行，将执行结果返回给guest os
+ 5) 在Xen hypervisor中对RDTSC进行模拟执行，将执行结果返回给guest os
 
-* 6) guest os 继续执行RDTSC指令的下一条指令
+ 6) guest os 继续执行RDTSC指令的下一条指令
 以上整个过程对于guest os是透明的。
 
 通过对RDTSC分析，我们需要在第5步添加钩子点收集RDTSC模拟执行结果，在RDTSC指令模拟执行的结果返回前生成RDTSC事件记录，并将事件记录写入replay queue，事件记录通过Record架构最终被写入日志文件(这个过程可以参看 http://code.google.com/p/vmplayer/wiki/IntroducetoRecordArchitecture )。
