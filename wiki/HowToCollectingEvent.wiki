@@ -33,6 +33,7 @@
  * 捕获RDTSC的代码流程(请看xen3.3.0被patch后的代码)
 
    被监控guest os中执行RDTSC
+
 -->  触发GPF异常
 --> do_general_protection  // arch/x86/traps.c
     --> emulate_privileged_op // arch/x86/traps.c，在这里调用钩子函数do_tsc_fixup
