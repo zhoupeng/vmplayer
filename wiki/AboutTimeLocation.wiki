@@ -36,4 +36,4 @@
 
  = 详细分析 =
 
-  请看文档 “时间点.pdf”
+  请看文档 “时间点.pdf” http://vmplayer.googlecode.com/files/%E6%97%B6%E9%97%B4%E7%82%B9.pdf
