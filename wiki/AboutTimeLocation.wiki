@@ -1,5 +1,7 @@
 # performance counter
 
+<wiki:toc max_depth="3" />
+
  = 概念 =
 
  * 时间点(time location)： 它是在程序运行过程中，指令流的某个具体位置。它是一个动态的概念。
