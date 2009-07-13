@@ -30,7 +30,7 @@
 
   === 初始化设置 ===
 
-  * 分析了在intel P4系列和core2系列上需要对硬件进行的基本设置，其中core2部分在当前机器上使用，p4部分在原revirt上使用。
+  * 包括在intel P4系列和core2系列上需要对硬件进行的基本设置，其中core2部分在当前机器上使用，p4部分在原revirt上使用。
   * 在P4系列上主要涉及通过wrmsr指令对MSR_TBPU_ESCR0、MSR_MS_CCCR0和MSR_MS_COUNTER0寄存器访问。
   * 对于core2系列上主要涉及对IA32_PERFEVTSEL0、IA32_PMC0、IA32_PERF_GLOBAL_CTRL和IA32_PERF_GLOBAL_STATUS的访问。
 
