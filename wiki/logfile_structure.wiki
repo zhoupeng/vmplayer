@@ -28,6 +28,7 @@ struct replay_file_header {
 
 || *字段* || *说明* ||
 || magic || 0x11224433 ||
+|| dom || 被记录domain的ID号 ｜｜
 
 == domain信息页信息  ==
 
