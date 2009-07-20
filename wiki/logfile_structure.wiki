@@ -12,6 +12,20 @@
 
 == 文件头  ==
 
+定义见vmplayer/tools/replay/record.h
+{{{
+struct replay_file_header {
+	unsigned magic;
+	u32 dom;
+	u32 flags;
+	u32 shared_info_mfn;                            //没使用
+	unsigned assist;                                    //没使用
+	memory_t tot_pages;
+	memory_t shared_info_frame;
+	vcpu_guest_context_t ctxt;
+};
+}}}
+
 == domain信息页信息  ==
 
 == shared_info页  ==
