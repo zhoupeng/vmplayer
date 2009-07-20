@@ -18,13 +18,16 @@ struct replay_file_header {
 	unsigned magic;
 	u32 dom;
 	u32 flags;
-	u32 shared_info_mfn;                            //没使用
-	unsigned assist;                                    //没使用
+	u32 shared_info_mfn;                            
+	unsigned assist;                                    
 	memory_t tot_pages;
 	memory_t shared_info_frame;
 	vcpu_guest_context_t ctxt;
 };
 }}}
+
+|| *字段* || *说明* ||
+|| magic || 0x11224433 ||
 
 == domain信息页信息  ==
 
