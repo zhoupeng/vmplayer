@@ -1,4 +1,4 @@
-#summary log文件的结构
+#summary 更新的log文件结构
 
 = 文件整体结构 =
 
