@@ -65,11 +65,13 @@ Domain的全部内存内容，共header.tot_pages页
 
 M2P表信息存储在m2p_info结构体中,定义在vmplayer/tools/replay/record.h
 
+{{{
 struct m2p_info {
 	uint32_t mfn0;
 	uint32_t size;
 	uint32_t chunks;
 }; 
+}}}
 
 || *字段* || *说明* ||
 || mfn0 || M2P表的起始物理页号 ||
