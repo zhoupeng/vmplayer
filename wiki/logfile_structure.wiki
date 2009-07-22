@@ -29,14 +29,53 @@ struct replay_file_header {
 || *字段* || *说明* ||
 || magic || 0x11224433 ||
 || dom || 被记录domain的ID号 ||
+|| flags || dominfo.flags(dom)状态信息 ||
+|| shared_info_mfn || 没使用 ||
+|| assist || 没使用 ||
+|| tot_pages || dominfo.tot_pages(domain拥有的页数) ||
+|| shared_info_frame || starting MFN of shared_info struct ||
+|| ctxt || 0号虚拟cpu的上下文信息 ||
 
+== Domain内存页信息 ==
 
-== domain信息页信息  ==
+Domain全部可用内存页信息，共header.tot_pages项，每项是pfn_info结构。
 
-== shared_info页  ==
+pfn_info结构定义在：vmplayer/xen/include/public/replay.h
+{{{
+struct pfn_info{
+	uint64_t pfn;
+	uint32_t type_and_count;
+};
+}}}
 
-== 内存内容  ==
+|| *字段* || *说明* ||
+|| pfn || 内存页号  ||
+|| type_and_count || 0-25:引用计数 ||
+|| || 26-31:类型信息 ||
 
-== M2P表信息  ==
+== 内存内容 ==
 
-== M2P表内容  ==
+Domain的全部内存内容，共header.tot_pages页
+
+== shared_info page ==
+
+占一页空间
+
+== M2P表信息 ==
+
+M2P表信息存储在m2p_info结构体中,定义在vmplayer/tools/replay/record.h
+
+struct m2p_info {
+	uint32_t mfn0;
+	uint32_t size;
+	uint32_t chunks;
+}; 
+
+|| *字段* || *说明* ||
+|| mfn0 || M2P表的起始物理页号 ||
+|| size || M2P表的大小 ||
+|| chunks || M2P表块的大小，目前是2M ||
+
+== M2P表内容 ==
+
+读取以m2p_info.mfn0页起始，共m2p_info.size大小的内存。
