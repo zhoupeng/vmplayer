@@ -1,0 +1,1 @@
+This is a further development of the revirt project which was initiated by the team of Prof. Peter Chen from University of Michigan. We aims to first keep up with Xen mainstream source code, then make it useful for our vncos development.
